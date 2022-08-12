@@ -1,0 +1,903 @@
+%	-------------------------------------------------------------------------------
+% 
+%	작성  : 	2020년 6월 16일 첫작업
+%
+%
+%
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+
+%	\documentclass[12pt, a3paper, oneside]{book}
+	\documentclass[12pt, a4paper, oneside]{book}
+%	\documentclass[12pt, a4paper, landscape, oneside]{book}
+
+		% --------------------------------- 페이지 스타일 지정
+		\usepackage{geometry}
+%		\geometry{landscape=true	}
+		\geometry{top 			=10em}
+		\geometry{bottom			=10em}
+		\geometry{left			=8em}
+		\geometry{right			=8em}
+		\geometry{headheight		=4em} % 머리말 설치 높이
+		\geometry{headsep		=2em} % 머리말의 본문과의 띠우기 크기
+		\geometry{footskip		=4em} % 꼬리말의 본문과의 띠우기 크기
+% 		\geometry{showframe}
+	
+%		paperwidth 	= left + width + right (1)
+%		paperheight 	= top + height + bottom (2)
+%		width 		= textwidth (+ marginparsep + marginparwidth) (3)
+%		height 		= textheight (+ headheight + headsep + footskip) (4)
+
+
+
+		%	===================================================================
+		%	package
+		%	===================================================================
+%			\usepackage[hangul]{kotex}				% 한글 사용
+			\usepackage{kotex}					% 한글 사용
+			\usepackage[unicode]{hyperref}			% 한글 하이퍼링크 사용
+
+		% ------------------------------ 수학 수식
+			\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+			\usepackage{mathtools}				% amsmath 확장판
+
+			\usepackage{scrextend}				% 
+		
+
+		% ------------------------------ LIST
+			\usepackage{enumerate}			%
+			\usepackage{enumitem}			%
+			\usepackage{tablists}				%	수학문제의 보기 등을 표현하는데 사용
+										%	tabenum
+
+
+		% ------------------------------ table 
+			\usepackage{longtable}			%
+			\usepackage{tabularx}			%
+			\usepackage{tabu}				%
+
+
+
+
+		% ------------------------------ 
+			\usepackage{setspace}			%
+			\usepackage{booktabs}		% table
+			\usepackage{color}			%
+			\usepackage{multirow}			%
+			\usepackage{boxedminipage}	% 미니 페이지
+			\usepackage[pdftex]{graphicx}	% 그림 사용
+			\usepackage[final]{pdfpages}		% pdf 사용
+			\usepackage{framed}			% pdf 사용
+
+			
+			\usepackage{fix-cm}	
+			\usepackage[english]{babel}
+	
+		%	=======================================================================================
+		% 	tikz package
+		% 	
+		% 	--------------------------------- 	
+			\usepackage{tikz}%
+			\usetikzlibrary{arrows,positioning,shapes}
+			\usetikzlibrary{mindmap}			
+			
+
+		% --------------------------------- 	page
+			\usepackage{afterpage}		% 다음페이지가 나온면 어떻게 하라는 명령 정의 패키지
+%			\usepackage{fullpage}			% 잘못 사용하면 다 흐트러짐 주의해서 사용
+%			\usepackage{pdflscape}		% 
+			\usepackage{lscape}			%	 
+
+
+			\usepackage{blindtext}
+	
+		% --------------------------------- font 사용
+			\usepackage{pifont}				%
+			\usepackage{textcomp}
+			\usepackage{gensymb}
+			\usepackage{marvosym}
+
+
+
+		% Package --------------------------------- 
+
+			\usepackage{tablists}				%
+
+
+		% Package --------------------------------- 
+			\usepackage[framemethod=TikZ]{mdframed}				% md framed package
+			\usepackage{smartdiagram}								% smart diagram package
+
+
+
+		% Package ---------------------------------    연습문제 
+
+			\usepackage{exsheets}				%
+
+			\SetupExSheets{solution/print=true}
+			\SetupExSheets{question/type=exam}
+			\SetupExSheets[points]{name=point,name-plural=points}
+
+
+		% --------------------------------- 페이지 스타일 지정
+
+		\usepackage[Sonny]		{fncychap}
+
+			\makeatletter
+			\ChNameVar	{\Large\bf}
+			\ChNumVar	{\Huge\bf}
+			\ChTitleVar		{\Large\bf}
+			\ChRuleWidth	{0.5pt}
+			\makeatother
+
+%		\usepackage[Lenny]		{fncychap}
+%		\usepackage[Glenn]		{fncychap}
+%		\usepackage[Conny]		{fncychap}
+%		\usepackage[Rejne]		{fncychap}
+%		\usepackage[Bjarne]	{fncychap}
+%		\usepackage[Bjornstrup]{fncychap}
+
+		\usepackage{fancyhdr}
+		\pagestyle{fancy}
+		\fancyhead{} % clear all fields
+		\fancyhead[LO]{\footnotesize \leftmark}
+		\fancyhead[RE]{\footnotesize \leftmark}
+		\fancyfoot{} % clear all fields
+		\fancyfoot[LE,RO]{\large \thepage}
+		%\fancyfoot[CO,CE]{\empty}
+		\renewcommand{\headrulewidth}{1.0pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	
+	
+	
+		%	--------------------------------------------------------------------------------------- 
+		% 	tritlesec package
+		% 	
+		% 	
+		% 	------------------------------------------------------------------ section 스타일 지정
+	
+			\usepackage{titlesec}
+		
+		% 	----------------------------------------------------------------- section 글자 모양 설정
+			\titleformat*{\section}					{\large\bfseries}
+			\titleformat*{\subsection}				{\normalsize\bfseries}
+			\titleformat*{\subsubsection}			{\normalsize\bfseries}
+			\titleformat*{\paragraph}				{\normalsize\bfseries}
+			\titleformat*{\subparagraph}				{\normalsize\bfseries}
+	
+		% 	----------------------------------------------------------------- section 번호 설정
+			\renewcommand{\thepart}				{\arabic{part}.}
+			\renewcommand{\thesection}				{\arabic{section}.}
+			\renewcommand{\thesubsection}			{\thesection\arabic{subsection}.}
+			\renewcommand{\thesubsubsection}		{\thesubsection\arabic{subsubsection}}
+			\renewcommand\theparagraph 			{$\blacksquare$ \hspace{3pt}}
+
+		% 	----------------------------------------------------------------- section 페이지 나누기 설정
+			\let\stdsection\section
+			\renewcommand\section{\newpage\stdsection}
+
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	\titlespacing*{commandi} {left} {before-sep} {after-sep} [right-sep]		
+		% 	left
+		%	before-sep		:  수직 전 간격
+		% 	after-sep	 	:  수직으로 후 간격
+		%	right-sep
+
+			\titlespacing*{\section} 			{0pt}{1.0em}{1.0em}
+			\titlespacing*{\subsection}	  		{0ex}{1.0em}{1.0em}
+			\titlespacing*{\subsubsection}		{0ex}{1.0em}{1.0em}
+			\titlespacing*{\paragraph}			{0em}{1.5em}{1.0em}
+			\titlespacing*{\subparagraph}		{4em}{1.0em}{1.0em}
+	
+		%	\titlespacing*{\section} 			{0pt}{0.0\baselineskip}{0.0\baselineskip}
+		%	\titlespacing*{\subsection}	  		{0ex}{0.0\baselineskip}{0.0\baselineskip}
+		%	\titlespacing*{\subsubsection}		{6ex}{0.0\baselineskip}{0.0\baselineskip}
+		%	\titlespacing*{\paragraph}			{6pt}{0.0\baselineskip}{0.0\baselineskip}
+	
+
+		% --------------------------------- recommend		섹션별 페이지 상단 여백
+		\newcommand{\SectionMargin}				{\newpage  \null \vskip 2cm}
+		\newcommand{\SubSectionMargin}			{\newpage  \null \vskip 2cm}
+		\newcommand{\SubSubSectionMargin}		{\newpage  \null \vskip 2cm}
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	toc 설정  - table of contents
+		% 	
+		% 	
+		% 	----------------------------------------------------------------  문서 기본 사항 설정
+			\setcounter{secnumdepth}{4} 		% 문단 번호 깊이
+			\setcounter{tocdepth}{2} 			% 문단 번호 깊이 - 목차 출력시 출력 범위
+
+			\setlength{\parindent}{0cm} 		% 문서 들여 쓰기를 하지 않는다.
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	mini toc 설정
+		% 	
+		% 	
+		% 	--------------------------------------------------------- 장의 목차  minitoc package
+			\usepackage{minitoc}
+
+			\setcounter{minitocdepth}{1}    	%  Show until subsubsections in minitoc
+%			\setlength{\mtcindent}{12pt} 	% default 24pt
+			\setlength{\mtcindent}{24pt} 	% default 24pt
+
+		% 	--------------------------------------------------------- part toc
+		%	\setcounter{parttocdepth}{2} 	%  default
+			\setcounter{parttocdepth}{0}
+		%	\setlength{\ptcindent}{0em}		%  default  목차 내용 들여 쓰기
+			\setlength{\ptcindent}{0em}         
+
+
+		% 	--------------------------------------------------------- section toc
+
+			\renewcommand{\ptcfont}{\normalsize\rm} 		%  default
+			\renewcommand{\ptcCfont}{\normalsize\bf} 	%  default
+			\renewcommand{\ptcSfont}{\normalsize\rm} 	%  default
+
+
+		%	=======================================================================================
+		% 	tocloft package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\usepackage{tocloft}
+
+		% 	------------------------------------------ 목차의 내어쓰기 즉 왼쪽 마진 설정
+			\setlength{\cftsecindent}{2em}			%  section
+
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\setlength{\cftsecnumwidth}{2em}		%  section
+
+
+
+
+
+		%	=======================================================================================
+		% 	flowchart  package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\usepackage{flowchart}
+			\usetikzlibrary{arrows}
+
+
+		%	=======================================================================================
+		% 		makeindex package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+%			\usepackage{makeindex}
+%			\usepackage{makeidy}
+
+
+		%	=======================================================================================
+		% 		각주와 미주
+		% 	
+
+		\usepackage{endnotes} %미주 사용
+
+
+		%	=======================================================================================
+		% 	줄 간격 설정
+		% 	
+		% 	
+		% 	--------------------------------- 	줄간격 설정
+			\doublespace
+%			\onehalfspace
+%			\singlespace
+		
+		
+
+	% 	============================================================================== itemi Global setting
+
+	
+		%	-------------------------------------------------------------------------------
+		%		Vertical spacing
+		%	-------------------------------------------------------------------------------
+			\setlist[itemize]{topsep=0.0em}			% 상단의 여유치
+			\setlist[itemize]{partopsep=0.0em}			% 
+			\setlist[itemize]{parsep=0.0em}			% 
+%			\setlist[itemize]{itemsep=0.0em}			% 
+			\setlist[itemize]{noitemsep}				% 
+			
+		%	-------------------------------------------------------------------------------
+		%		Horizontal spacing
+		%	-------------------------------------------------------------------------------
+			\setlist[itemize]{labelwidth=1em}			%  라벨의 표시 폭
+			\setlist[itemize]{leftmargin=8em}			%  본문 까지의 왼쪽 여백  - 4em
+			\setlist[itemize]{labelsep=3em} 			%  본문에서 라벨까지의 거리 -  3em
+			\setlist[itemize]{rightmargin=0em}			% 오른쪽 여백  - 4em
+			\setlist[itemize]{itemindent=0em} 			% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+			\setlist[itemize]{listparindent=3em}		% 본문 드려쓰기 간격
+	
+	
+			\setlist[itemize]{ topsep=0.0em, 			%  상단의 여유치
+						partopsep=0.0em, 		%  
+						parsep=0.0em, 
+						itemsep=0.0em, 
+						labelwidth=1em, 
+						leftmargin=2.5em,
+						labelsep=2em,			%  본문에서 라벨 까지의 거리
+						rightmargin=0em,		% 오른쪽 여백  - 4em
+						itemindent=0em, 		% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em}		% 본문 드려쓰기 간격
+	
+%			\begin{itemize}
+	
+		%	-------------------------------------------------------------------------------
+		%		Label
+		%	-------------------------------------------------------------------------------
+			\renewcommand{\labelitemi}{$\bullet$}
+			\renewcommand{\labelitemii}{$\bullet$}
+%			\renewcommand{\labelitemii}{$\cdot$}
+			\renewcommand{\labelitemiii}{$\diamond$}
+			\renewcommand{\labelitemiv}{$\ast$}		
+	
+%			\renewcommand{\labelitemi}{$\blacksquare$}   	% 사각형 - 찬것
+%			\renewcommand\labelitemii{$\square$}		% 사각형 - 빈것	
+			
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+	\begin{document}
+	
+			\dominitoc
+			\doparttoc			
+
+
+
+
+			\title{	불화 }
+			\author{김대희}
+			\date{2020년 7월}
+			\maketitle
+
+
+			\tableofcontents 		% 목차 출력
+%			\listoffigures 			% 그림 목차 출력
+			\cleardoublepage
+			\listoftables 			% 표 목차 출력
+
+
+
+
+
+		\mdfdefinestyle	{con_specification} {
+						outerlinewidth		=1pt			,%
+						innerlinewidth		=2pt			,%
+						outerlinecolor		=blue!70!black	,%
+						innerlinecolor		=white 			,%
+						roundcorner			=4pt			,%
+						skipabove			=1em 			,%
+						skipbelow			=1em 			,%
+						leftmargin			=0em			,%
+						rightmargin			=0em			,%
+						innertopmargin		=2em 			,%
+						innerbottommargin 	=2em 			,%
+						innerleftmargin		=1em 			,%
+						innerrightmargin		=1em 			,%
+						backgroundcolor		=gray!4			,%
+						frametitlerule		=true 			,%
+						frametitlerulecolor	=white			,%
+						frametitlebackgroundcolor=black		,%
+						frametitleaboveskip=1em 			,%
+						frametitlebelowskip=1em 			,%
+						frametitlefontcolor=white 			,%
+						}
+
+
+
+%	================================================================== Part			불화
+	\addtocontents{toc}{\protect\newpage}
+	\part{불화}
+	\noptcrule
+	\parttoc				
+
+
+
+
+%	================================================================== Part			라즈베리 파이
+%	\addtocontents{toc}{\protect\newpage}
+	\chapter{불화 수업}
+	\noptcrule
+
+	\newpage	
+	\minitoc
+
+
+
+
+
+% ----------------------------------------------------------------------------- 개요
+%
+% -----------------------------------------------------------------------------
+	\section{ 불화 수업 개요}
+
+
+% ----------------------------------------------------------------------------- 강사
+%
+% -----------------------------------------------------------------------------
+	\section{ 강사}
+
+
+
+% ----------------------------------------------------------------------------- 수업료
+	\section{ 수업료}
+
+
+
+% ----------------------------------------------------------------------------- 급우
+	\section{ 급우}
+
+
+%	================================================================== Part	참고문헌
+%	\addtocontents{toc}{\protect\newpage}
+	\chapter{참고 문헌 }
+	\noptcrule
+
+	\newpage	
+	\minitoc
+
+
+% ----------------------------------------------------------------------------- 하드웨어
+	\section{ 하드웨어}
+
+\paragraph{ 불화, 찬란한 불교 미술의 세계 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+
+	\item	[제목]	[도서] 불화, 찬란한 불교 미술의 세계	\item	[저자]	저자 : 김정희 지음	\item	[출판사]	발행처 : 돌베개, 2009	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 600.422-12	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{ 불화, 찬란한 불교 미술의 세계 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 불화, 찬란한 불교 미술의 세계	\item	[저자]	저자 : 김정희 지음	\item	[출판사]	발행처 : 돌베개, 2009	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 600.422-12	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{불화의 비밀 : 삼국시대 벽화에서 조선시대 괘불까지 1,600여 년을 이어 온 찬란한 믿음의 기록 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 불화의 비밀 : 삼국시대 벽화에서 조선시대 괘불까지 1,600여 년을 이어 온 찬란한 믿음의 기록	\item	[저자]	저자 : 자현 지음	\item	[출판사]	발행처 : 조계종출판사, 2017	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-22	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{빛깔있는 책들 : 불교문화. 제11권 : 불화 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 빛깔있는 책들 : 불교문화. 제11권 : 불화	\item	[저자]	저자 : 홍윤식 著 ; 홍윤식 ; 윤열수 [공]사진	\item	[출판사]	발행처 : 대원사, 1989	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 220.8-ㅂ998ㄷ-11	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{ 빛깔있는 책들 : 불교문화. 제18권 : 불화그리기 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 빛깔있는 책들 : 불교문화. 제18권 : 불화그리기	\item	[저자]	저자 : 박정자 著 ; 석선암 寫眞	\item	[출판사]	발행처 : 대원사, 1990	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 220.8-ㅂ998ㄷ-18	대출가능여부 : 대출불가(관외대출중)	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{(삶과 초월의)미학 : 불화 상징 바로 읽기}
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] (삶과 초월의)미학 : 불화 상징 바로 읽기	\item	[저자]	저자 : 최성규 지음	\item	[출판사]	발행처 : 정우서적, 2006	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-9	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{ 왕실, 권력 그리고 불화 : 고려와 조선의 왕실불화 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 왕실, 권력 그리고 불화 : 고려와 조선의 왕실불화	\item	[저자]	저자 : 김정희 지음	\item	[출판사]	발행처 : 세창출판사, 2019	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-24	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{ 명화에서 길을 찾다 : 매혹적인 우리 불화 속 지혜 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 명화에서 길을 찾다 : 매혹적인 우리 불화 속 지혜	\item	[저자]	저자 : 강소연 지음	\item	[출판사]	발행처 : 시공아트, 2019	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-23	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{ 조선 전기 불화 연구 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 조선 전기 불화 연구	\item	[저자]	저자 : 박은경 저	\item	[출판사]	발행처 : Sigong Art, 2008	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-16	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{ 조선후기 불화와 화사 연구 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 조선후기 불화와 화사 연구	\item	[저자]	저자 : 장희정 지음	\item	[출판사]	발행처 : 일지사, 2003	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-5	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+
+\end{itemize}					
+
+
+\paragraph{ 임석정 : 불화는 신슴으로부터지 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 임석정 : 불화는 신슴으로부터지	\item	[저자]	저자 : 구술자: 임석정 ; 조사자: 이은정	\item	[출판사]	발행처 : 국립무형유산원, 2017	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 600.99-54-9	대출가능여부 : 대출가능	소장위치 : [중앙]서고(종합자료실)
+
+\end{itemize}					
+
+
+\paragraph{ 법당 밖으로 나온 큰 불화 : 청곡사 괘불 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 법당 밖으로 나온 큰 불화 : 청곡사 괘불	\item	[저자]	저자 : 정명희 글 ; 국립중앙박물관 미술부 편저	\item	[출판사]	발행처 : 국립중앙박물관, 2006	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-12	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+\end{itemize}					
+
+
+\paragraph{ 고려불화대전 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+
+	\item	[제목]	[도서] 고려불화대전	\item	[저자]	저자 : 국립중앙박물관 편	\item	[출판사]	발행처 : 국립중앙박물관, 2010	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 참고 654.22-3	대출가능여부 : 대출불가(열람제한도서)	소장위치 : [중앙]종합참고실(3층)
+\end{itemize}					
+
+
+\paragraph{ 서울의 사찰불화. 1}
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 서울의 사찰불화. 1	\item	[저자]	저자 : 서울역사박물관 편	\item	[출판사]	발행처 : 서울역사박물관, 2007	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 참고 654.22-2-1	대출가능여부 : 대출불가(열람제한도서)	소장위치 : [중앙]종합참고실(3층)
+\end{itemize}					
+
+
+\paragraph{ 서울의 사찰불화. 2 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 서울의 사찰불화. 2	\item	[저자]	저자 : 서울역사박물관 편	\item	[출판사]	발행처 : 서울역사박물관, 2008	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 참고 654.22-2-2	대출가능여부 : 대출불가(열람제한도서)	소장위치 : [중앙]종합참고실(3층)
+\end{itemize}					
+
+
+\paragraph{ 고려불화 : 실크로드를 품다 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 고려불화 : 실크로드를 품다	\item	[저자]	저자 : 김영채 지음	\item	[출판사]	발행처 : 운주사, 2004	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-6	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+\end{itemize}					
+
+
+\paragraph{ 전통불화의 脈 : 그 실기와 이론 }  
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 전통불화의 脈 : 그 실기와 이론	\item	[저자]	저자 : 곽동해 지음	\item	[출판사]	발행처 : 학연문화사, 2006	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-10	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+\end{itemize}					
+
+
+\paragraph{ 사찰불화 명작강의 : 우리가 꼭 한 번 봐야 할 국보급 베스트 10	 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	[제목]	[도서] 사찰불화 명작강의 : 우리가 꼭 한 번 봐야 할 국보급 베스트 10	\item	[저자]	저자 : 강소연 지음	\item	[출판사]	발행처 : 불광출판사, 2016	\item	[도서관]	소장도서관 : 중앙도서관	청구기호 : 654.22-21	대출가능여부 : 대출가능	소장위치 : [중앙]종합자료실(3층)
+\end{itemize}					
+
+
+
+
+%	================================================================== Part	탱화
+%	\addtocontents{toc}{\protect\newpage}
+	\chapter{ 탱화 }
+	\noptcrule
+
+	\newpage	
+	\minitoc
+
+
+% ----------------------------------------------------------------------------- 불화그리기
+	\section{ 불화 그리기 }
+
+
+% ----------------------------------------------------------------------------- 목차
+	\section{ 목차 }
+
+\begin{itemize}[					
+		topsep=0.0em,			
+		parsep=0.0em,			
+		itemsep=0em,			
+		leftmargin=	5	em,
+		labelwidth=	1	em,			
+		labelsep=		1	 em			
+]					
+	\item	머리말
+	\item	탱화의 종류
+	\item	불회의 색 구조와 습화법
+	\item	불화 만들기
+	\item	탱화 제작 과정
+	\item	불화 그리기
+	\item	맺음말
+
+\end{itemize}					
+
+
+
+% ----------------------------------------------------------------------------- 박정자
+	\section{ 박정자 }
+
+
+\paragraph{}
+71년 인간문화재 제48호 만봉 이지호 선생님 문하에 입문하였다.
+
+\paragraph{ 수상 경력 }
+84년 일본 아시아 현대 미술 대상전에서 특별상을 비롯하여 
+85년 제10회 전승 송계 대전에서 특별상,
+86년 제11회 전승 공예 대전에서 대통령상 등 많은 상을 수상하였다.
+88년 준인간문화재로 지정받았으며 현재 박정자 전통 불화 교실을 운영하고 있다
+
+
+
+\paragraph{ 박정자, 불화집 제불환희 펴내 동아 일보 2009.09.26 }
+색동저고리처럼 곱디고운 색과 끊어질듯 이어지는 선. 그 색채와 선에서 무한한 경건함과 법열(法悅)을 느끼게 하는 우리의 전통 불화. 27년간 이를 그려온 박정자씨(59)가 자신의 작품을 모아 불화집 「제불환희」(諸佛歡喜·광진문화사)를 냈다. 『전남 나주에 건립중인 불화박물관으로 모든 작품들을 옮기기로 한데다 스승인 봉원사 만봉스님의 미수를 기념하기 위해 이책을 냈습니다』 박씨가 불화에 빠져든 것은 초등학교 교사시절. 전남 장흥출신으로 광주교대재학중 동양화를 공부했던 그는 우연한 기회에 만봉스님의 불화를 보고 깊은 감동을 느껴 새로운 인생의 길로 들어섰다. 이책에는 지금까지 그린 1천여점의 불화중 대표작 65점이 담겨 있다. 석가모니 삼신불 산신 동자 보살 연꽃 봉황 학 용…. 붉은 빛(丹) 푸른 빛(靑) 등이 어우러져 오묘한 종교적 신비를 자아낸다. 우리나라 최초의 여성불화가로 중요무형문화재 48호 단청장 후보(준인간문화재)이기도 한 그는 지난 88년 전승공예대전에서 「금니부모은중경」(金泥父母恩重經)이란 대작으로 대통령상을 받았다. 그의 불화는 전국 30개의 사찰에 걸려 있다. 불화는 크게 벽화와 탱화(幀畵)로 구별되는데 그가 그린 그림은 주로 액자 족자형태인 탱화다. 박씨는 불화를 「말없는 법문」이라고 표현한다. 『불화는 내몸이고 호흡이고 분신불입니다. 이를 들여다보다 보면 마음이 한없이 숙연해지고 푸근해집니다』 \\
+서울 서대문구 충정로 충정아파트 5층 「전통불화연구원」. 그는 허구한 세월을 20평남짓한 이 작업실 바닥에 엎드려 지낸다. 그는 올해로 서울 생활을 마치고 9월말 나주로 떠난다. 나주시 다시면의 한 폐교에 들어서는 불화박물관을 운영하기 위해서다. 나주시는 1억원을 들여 2천2백평규모의 이 폐교를 구입했고 오는 98년까지 30억원을 투자해 본격적인 박물관으로 가꿀 방침이다. 그는 『오래전부터 박물관건립을 생각했는데 다행히 나주시가 나서주었다』며 『돈은 못벌었지만 불화는 많이 그려 전시작품이 충분하다』고 말했다. 이 불화박물관은 앞으로 전시장과 함께 전통불화연수학교 등으로 사용된다. 〈송영언기자〉
+
+
+
+% ----------------------------------------------------------------------------- 석선암
+	\section{ 석선암 }
+
+
+\paragraph{}
+88년 한국 관광 공사 사진 공모전에서 준우승상을 비롯하여 제50회 일본 아사이 신문 국제 사진 공모전에서 입선 등 개인 사진전을 3회 가진바 있다.
+
+\paragraph{}
+현재 한국 불교 신문사 사진부 기자이며 한국 불교 태고종 봉원사 교무로 있다.
+
+\paragraph{}
+사진집으로 영산재가 있다.
+
+
+
+% ----------------------------------------------------------------------------- 탱화의 역사
+	\section{ 탱화의 역사 }
+
+
+\paragraph{}
+탱화의 역사를 거슬러 올라가면 탱화는 부처님 생존 때부터 존재한다.
+
+\paragraph{}
+「신수대장경」 47 율부에 의하면 
+석가모니 부처님께서 최초의 불교사찰인 기원정사에 동산을 보시한 급고독장자에게
+"장자여, 문의 양쪽에는 \textbf{집장약차}를 그리고 
+그 옆의 한 벽면에 \textbf{대신통변}을 기리고
+또 한벽면에는 \textbf{오취생사의 수레바퀴}를 그리고
+그리고 처마의 벽면에는 \textbf{본생사}를 그리며
+불전의 문옆에는 \textbf{지만야차}를 그리고
+강당에는 음식을 든 \textbf{약차},
+창고문에는 보배를 가진 \textbf{집보야차}를,
+안수당에는 \textbf{여래}가 몸소 병을 간호하는 상을,
+대소행처에는 시체의 모습을,
+방 안에는  마땅히 흰 뼈와 해골을 구려라"
+라고 말슴 하셨다.
+
+\paragraph{}
+이러한 기록을 보아 
+불교 초기엔는 어떤 형태이거나 장식적이고
+교훈적인 그림이 있었으며
+기원전 2, 3 세기경부터 인도의 각 사찰에 벽화가
+그려졌다고 볼 수 있다.
+
+\paragraph{}
+또한 불교가 서역, 중국를 통하여 우리나라에 들어왔으며 일본에 까지 전해진 것으로 추측할 수 있다.
+
+
+
+
+% ----------------------------------------------------------------------------- 탱화의 구분
+	\section{ 탱화의 구분 }
+
+
+우리나라 사찰은 탱화를 대개 3단으로 배치한다.
+시대나 교리상의 분류하는 방법에 따라 약간의 차이는 있지만 크게 상, 중, 하의 3단으로 구분할 수 있다.
+상단은 불단, 중단은 보살단, 하단은 신중단으로 나눈다.
+그리고 탱화에 따라 모셔지는 주존과 권속이 다르다.
+각 사찰에 많이 모셔지는 탱화는 다음과 같다.
+
+	\subsection{ 상단	탱화}
+
+석가모니 부처님이 주존일때는 문수, 보현보살이 협시하고	
+10대 제자, 사천왕이 그려 모셔진 것이 일반적인 예이다.	
+아미타불이 주존일 때는 관음, 세지보살이 협시하고 10대 제자, 사천왕 그 밖에 8대 보살,	
+12대 보살, 천동, 천녀 등이 그려 모셔지고 대형의 상단탱화일 때에는	
+그것말고도 분신불과 팔부신중도 등장시킨다.	
+
+	\subsection{ 지장	탱화}
+	\subsection{ 신중	탱화}
+	\subsection{ 산신	탱화}
+	\subsection{ 나한	탱화}
+	\subsection{ 칠성	탱화}
+	\subsection{ 약사불	탱화}
+	\subsection{ 팔상	탱화}
+	\subsection{ 삼장보살	탱화}
+	\subsection{ 제석천룡	탱화}
+	\subsection{ 감로	탱화}
+	\subsection{ 시왕	탱화}
+
+
+
+
+%	================================================================== Part	수업
+%	\addtocontents{toc}{\protect\newpage}
+	\chapter{ 수업 }
+	\noptcrule
+
+	\newpage	
+	\minitoc
+
+
+
+% ----------------------------------------------------------------------------- 2020년 7월 05일 일
+	\section{ 2020년 7월 05일 일 }
+
+
+
+
+% ----------------------------------------------------------------------------- 2020년 7월 05일 일
+	\section{ 2020년 7월 05일 일 }
+
+
+
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+\end{document}
+
+
+	\href{https://www.youtube.com/watch?v=SpqKCQZQBcc}{태양경배자세A}
+	\href{https://www.youtube.com/watch?v=CL3czAIUDFY}{태양경배자세A}
+
+
+https://docs.google.com/spreadsheets/d/1-wRuFU1OReWrtxkhaw9uh5mxouNYRP8YFgykMh2G_8c/edit#gid=0
++
+
+https://seoyeongcokr-my.sharepoint.com/:f:/g/personal/02017_seoyoungeng_com/Ev8nnOI89D1LnYu90SGaVj0BTuckQ46vQe1HiVv-R4qeqQ?e=S3iAHi

@@ -1,0 +1,655 @@
+%	-------------------------------------------------------------------------------
+%
+%		작성		2020년 7월 20일 월
+%
+%
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+
+%\documentclass[10pt,xcolor=pdftex,dvipsnames,table]{beamer}
+%\documentclass[10pt,blue,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+%\documentclass[14pt,blue,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+\documentclass[aspectratio=1610,17pt,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+
+		% Font Size
+		%	default font size : 11 pt
+		%	8,9,10,11,12,14,17,20
+		%
+		% 	put frame titles 
+		% 		1) 	slideatop
+		%		2) 	slide centered
+		%
+		%	navigation bar
+		% 		1)	compress
+		%		2)	uncompressed
+		%
+		%	Color
+		%		1) blue
+		%		2) red
+		%		3) brown
+		%		4) black and white	
+		%
+		%	Output
+		%		1)  	[default]	
+		%		2)	[handout]		for PDF handouts
+		%		3) 	[trans]		for PDF transparency
+		%		4)	[notes=hide/show/only]
+
+		%	Text and Math Font
+		% 		1)	[sans]
+		% 		2)	[sefif]
+		%		3) 	[mathsans]
+		%		4)	[mathserif]
+
+
+		%	---------------------------------------------------------	
+		%	슬라이드 크기 설정 ( 128mm X 96mm )
+		%	---------------------------------------------------------	
+%			\setbeamersize{text margin left=2mm}
+%			\setbeamersize{text margin right=2mm}
+
+	%	========================================================== 	Package
+		\usepackage{kotex}						% 한글 사용
+		\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+		\usepackage{color}					%
+		\usepackage{colortbl}					%
+
+
+	%		========================================================= 	note 옵션인 
+	%			\setbeameroption{show only notes}
+		
+
+	%		========================================================= 	Theme
+
+		%	---------------------------------------------------------	
+		%	전체 테마
+		%	---------------------------------------------------------	
+		%	테마 명명의 관례 : 도시 이름
+%			\usetheme{default}			%
+%			\usetheme{Madrid}    		%
+%			\usetheme{CambridgeUS}    	% -red, no navigation bar
+%			\usetheme{Antibes}			% -blueish, tree-like navigation bar
+
+		%	----------------- table of contents in sidebar
+			\usetheme{Berkeley}		% -blueish, table of contents in sidebar
+									% 개인적으로 마음에 듬
+
+%			\usetheme{Marburg}			% - sidebar on the right
+%			\usetheme{Hannover}		% 왼쪽에 마크
+%			\usetheme{Berlin}			% - navigation bar in the headline
+%			\usetheme{Szeged}			% - navigation bar in the headline, horizontal lines
+%			\usetheme{Malmoe}			% - section/subsection in the headline
+
+%			\usetheme{Singapore}
+%			\usetheme{Amsterdam}
+
+		%	---------------------------------------------------------	
+		%	색 테마
+		%	---------------------------------------------------------	
+%			\usecolortheme{albatross}	% 바탕 파란
+%			\usecolortheme{crane}		% 바탕 흰색
+%			\usecolortheme{beetle}		% 바탕 회색
+%			\usecolortheme{dove}		% 전체적으로 흰색
+%			\usecolortheme{fly}		% 전체적으로 회색
+%			\usecolortheme{seagull}	% 휜색
+%			\usecolortheme{wolverine}	& 제목이 노란색
+%			\usecolortheme{beaver}
+
+		%	---------------------------------------------------------	
+		%	Inner Color Theme 			내부 색 테마 ( 블록의 색 )
+		%	---------------------------------------------------------	
+
+%			\usecolortheme{rose}		% 흰색
+%			\usecolortheme{lily}		% 색 안 칠한다
+%			\usecolortheme{orchid} 	% 진하게
+
+		%	---------------------------------------------------------	
+		%	Outter Color Theme 		외부 색 테마 ( 머리말, 고리말, 사이드바 )
+		%	---------------------------------------------------------	
+
+%			\usecolortheme{whale}		% 진하다
+%			\usecolortheme{dolphin}	% 중간
+%			\usecolortheme{seahorse}	% 연하다
+
+		%	---------------------------------------------------------	
+		%	Font Theme 				폰트 테마
+		%	---------------------------------------------------------	
+%			\usfonttheme{default}		
+			\usefonttheme{serif}			
+%			\usefonttheme{structurebold}			
+%			\usefonttheme{structureitalicserif}			
+%			\usefonttheme{structuresmallcapsserif}			
+
+
+
+		%	---------------------------------------------------------	
+		%	Inner Theme 				
+		%	---------------------------------------------------------	
+
+%			\useinnertheme{default}
+			\useinnertheme{circles}		% 원문자			
+%			\useinnertheme{rectangles}		% 사각문자			
+%			\useinnertheme{rounded}			% 깨어짐
+%			\useinnertheme{inmargin}			
+
+
+
+
+		%	---------------------------------------------------------	
+		%	이동 단추 삭제
+		%	---------------------------------------------------------	
+%			\setbeamertemplate{navigation symbols}{}
+
+		%	---------------------------------------------------------	
+		%	문서 정보 표시 꼬리말 적용
+		%	---------------------------------------------------------	
+%			\useoutertheme{infolines}
+
+
+			
+	%	---------------------------------------------------------- 	배경이미지 지정
+%			\pgfdeclareimage[width=\paperwidth,height=\paperheight]{bgimage}{./fig/Chrysanthemum.jpg}
+%			\setbeamertemplate{background canvas}{\pgfuseimage{bgimage}}
+
+		%	---------------------------------------------------------	
+		% 	본문 글꼴색 지정
+		%	---------------------------------------------------------	
+%			\setbeamercolor{normal text}{fg=purple}
+%			\setbeamercolor{normal text}{fg=red!80}	% 숫자는 투명도 표시
+
+
+		%	---------------------------------------------------------	
+		%	itemize 모양 설정
+		%	---------------------------------------------------------	
+%			\setbeamertemplate{items}[ball]
+%			\setbeamertemplate{items}[circle]
+%			\setbeamertemplate{items}[rectangle]
+
+
+
+
+
+
+		\setbeamercovered{dynamic}
+
+
+
+
+
+		% --------------------------------- 	문서 기본 사항 설정
+		\setcounter{secnumdepth}{3} 		% 문단 번호 깊이
+		\setcounter{tocdepth}{3} 			% 문단 번호 깊이
+
+
+
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+	\begin{document}
+	
+
+			\title{ 아함경 }
+			\author{ 김대희 }
+			\date{ 2020년 07월 20일 월요일 }
+
+
+% -----------------------------------------------------------------------------
+%		개정 내용
+% -----------------------------------------------------------------------------
+%
+%		2020년 6월 28일 첫제작
+%
+%
+%
+
+
+	%	==========================================================
+	%
+	%	----------------------------------------------------------
+		\begin{frame}[plain]
+		\titlepage
+		\end{frame}
+
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+
+
+	%	========================================================== 1
+		\part{ 1. 그 사람 }
+		\frame{\partpage}
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+		
+
+	%	---------------------------------------------------------- 명칭
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 석가족 }
+		\begin{frame} [t,plain]
+		\frametitle{		석가족	}	
+			\begin{block} { 		석가족	}
+			\setlength{\leftmargini}{5em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+		
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 정각 }
+		\begin{frame} [t,plain]
+		\frametitle{		정각	}	
+			\begin{block} { 		정각	}
+			\setlength{\leftmargini}{5em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}			
+
+								
+		\end{frame}						
+	
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 보리수밑에서의 생각	}	
+		\begin{frame} [t,plain]
+		\frametitle{		보리수밑에서의 생각	}	
+			\begin{block} { 		보리수밑에서의 생각	}
+			\setlength{\leftmargini}{6em}			
+			\begin{itemize}
+				\item [원주실 보살] 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 첫 설법	}	
+		\begin{frame} [t,plain]
+		\frametitle{		첫 설법	}	
+			\begin{block} { 		첫 설법	}
+			\setlength{\leftmargini}{6em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 네가지 진리	}	
+		\begin{frame} [t,plain]
+		\frametitle{		네가지 진리	}	
+			\begin{block} { 		네가지 진리	}
+			\setlength{\leftmargini}{6em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 전도 }
+		\begin{frame} [t,plain]
+		\frametitle{		전도	}	
+			\begin{block} { 		전도	}
+			\setlength{\leftmargini}{6em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 인간성 }
+		\begin{frame} [t,plain]
+		\frametitle{		인간성	}	
+			\begin{block} { 		인간성	}
+			\setlength{\leftmargini}{6em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+
+
+
+			
+
+	%	========================================================== 2 그 사상
+		\part{ 2. 그사상 }
+		\frame{\partpage}
+		
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+		
+
+	%	---------------------------------------------------------- 1 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				눈 있는 이는 보라	}
+		\begin{frame} [t,plain]					
+		\frametitle{			눈 있는 이는 보라	}
+			\begin{block} { 		눈 있는 이는 보라	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 2
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				현실적으로 증험 되는 것	}
+		\begin{frame} [t,plain]					
+		\frametitle{			현실적으로 증험 되는 것	}
+			\begin{block} { 		현실적으로 증험 되는 것	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 3
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				내재하는 방해들	}
+		\begin{frame} [t,plain]					
+		\frametitle{			내재하는 방해들	}
+			\begin{block} { 		내재하는 방해들	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 4
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				연기	}
+		\begin{frame} [t,plain]					
+		\frametitle{			연기	}
+			\begin{block} { 		연기	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 5
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				이는 고이다	}
+		\begin{frame} [t,plain]					
+		\frametitle{			이는 고이다	}
+			\begin{block} { 		이는 고이다	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 6
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				이는 고의 멸이다	}
+		\begin{frame} [t,plain]					
+		\frametitle{			이는 고의 멸이다	}
+			\begin{block} { 		이는 고의 멸이다	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 7
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				나는 밭을 간다	}
+		\begin{frame} [t,plain]					
+		\frametitle{			나는 밭을 간다	}
+			\begin{block} { 		나는 밭을 간다	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 8
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				열반	}
+		\begin{frame} [t,plain]					
+		\frametitle{			열반	}
+			\begin{block} { 		열반	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 9
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				불방일	}
+		\begin{frame} [t,plain]					
+		\frametitle{			불방일	}
+			\begin{block} { 		불방일	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 10
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				문답식	}
+		\begin{frame} [t,plain]					
+		\frametitle{			문답식	}
+			\begin{block} { 		문답식	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+
+
+	%	========================================================== 3.
+		\part{ 3. 그 실천 }
+		\frame{\partpage}
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+
+	%	---------------------------------------------------------- 1 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				착한 벗	}
+		\begin{frame} [t,plain]					
+		\frametitle{			착한 벗	}
+			\begin{block} { 		착한 벗	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 2
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				정사	精舍	}
+		\begin{frame} [t,plain]						
+		\frametitle{			정사	精舍	}
+			\begin{block} { 		정사	精舍	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 3
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				포살	布薩	}
+		\begin{frame} [t,plain]						
+		\frametitle{			포살	布薩	}
+			\begin{block} { 		포살	布薩	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 4
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				법좌	法座	}
+		\begin{frame} [t,plain]						
+		\frametitle{			법좌	法座	}
+			\begin{block} { 		법좌	法座	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 5
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				삼보	三寶	}
+		\begin{frame} [t,plain]						
+		\frametitle{			삼보	三寶	}
+			\begin{block} { 		삼보	三寶	}
+		\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 6
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				이타행	利他行	}
+		\begin{frame} [t,plain]						
+		\frametitle{			이타행	利他行	}
+			\begin{block} { 		이타행	利他行	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 7
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				불해	不害	}
+		\begin{frame} [t,plain]						
+		\frametitle{			불해	不害	}
+			\begin{block} { 		불해	不害	}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 8
+	%		Frame
+	%	----------------------------------------------------------
+		\section{				자비 慈悲 깨달음의 의미		}
+		\begin{frame} [t,plain]						
+		\frametitle{			자비 慈悲 깨달음의 의미		}
+			\begin{block} { 		자비 慈悲 깨달음의 의미		}
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+
+
+
+
+
+\end{document}
+
+

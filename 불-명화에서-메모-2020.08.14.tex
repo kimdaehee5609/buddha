@@ -1,0 +1,597 @@
+%	-------------------------------------------------------------------------------
+%
+%		작성		2020년 
+%				7월 
+%				20일 
+%				월
+%
+%				구덕 도서관 654.22 10
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+
+%\documentclass[10pt,xcolor=pdftex,dvipsnames,table]{beamer}
+%\documentclass[10pt,blue,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+%\documentclass[14pt,blue,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+\documentclass[aspectratio=1610,12pt,xcolor=pdftex,dvipsnames,table,handout]{beamer}
+
+		% Font Size
+		%	default font size : 11 pt
+		%	8,9,10,11,12,14,17,20
+		%
+		% 	put frame titles 
+		% 		1) 	slideatop
+		%		2) 	slide centered
+		%
+		%	navigation bar
+		% 		1)	compress
+		%		2)	uncompressed
+		%
+		%	Color
+		%		1) blue
+		%		2) red
+		%		3) brown
+		%		4) black and white	
+		%
+		%	Output
+		%		1)  	[default]	
+		%		2)	[handout]		for PDF handouts
+		%		3) 	[trans]		for PDF transparency
+		%		4)	[notes=hide/show/only]
+
+		%	Text and Math Font
+		% 		1)	[sans]
+		% 		2)	[sefif]
+		%		3) 	[mathsans]
+		%		4)	[mathserif]
+
+
+		%	---------------------------------------------------------	
+		%	슬라이드 크기 설정 ( 128mm X 96mm )
+		%	---------------------------------------------------------	
+%			\setbeamersize{text margin left=2mm}
+%			\setbeamersize{text margin right=2mm}
+
+	%	========================================================== 	Package
+		\usepackage{kotex}						% 한글 사용
+		\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+		\usepackage{color}					%
+		\usepackage{colortbl}					%
+
+
+		\usepackage{minitoc}					%
+
+	%		========================================================= 	note 옵션인 
+	%			\setbeameroption{show only notes}
+		
+
+	%		========================================================= 	Theme
+
+		%	---------------------------------------------------------	
+		%	전체 테마
+		%	---------------------------------------------------------	
+		%	테마 명명의 관례 : 도시 이름
+%			\usetheme{default}			%
+%			\usetheme{Madrid}    		%
+%			\usetheme{CambridgeUS}    	% -red, no navigation bar
+%			\usetheme{Antibes}			% -blueish, tree-like navigation bar
+
+		%	----------------- table of contents in sidebar
+			\usetheme{Berkeley}		% -blueish, table of contents in sidebar
+									% 개인적으로 마음에 듬
+
+%			\usetheme{Marburg}			% - sidebar on the right
+%			\usetheme{Hannover}		% 왼쪽에 마크
+%			\usetheme{Berlin}			% - navigation bar in the headline
+%			\usetheme{Szeged}			% - navigation bar in the headline, horizontal lines
+%			\usetheme{Malmoe}			% - section/subsection in the headline
+
+%			\usetheme{Singapore}
+%			\usetheme{Amsterdam}
+
+		%	---------------------------------------------------------	
+		%	색 테마
+		%	---------------------------------------------------------	
+%			\usecolortheme{albatross}	% 바탕 파란
+%			\usecolortheme{crane}		% 바탕 흰색
+%			\usecolortheme{beetle}		% 바탕 회색
+%			\usecolortheme{dove}		% 전체적으로 흰색
+%			\usecolortheme{fly}		% 전체적으로 회색
+%			\usecolortheme{seagull}	% 휜색
+%			\usecolortheme{wolverine}	& 제목이 노란색
+%			\usecolortheme{beaver}
+
+		%	---------------------------------------------------------	
+		%	Inner Color Theme 			내부 색 테마 ( 블록의 색 )
+		%	---------------------------------------------------------	
+
+%			\usecolortheme{rose}		% 흰색
+%			\usecolortheme{lily}		% 색 안 칠한다
+%			\usecolortheme{orchid} 	% 진하게
+
+		%	---------------------------------------------------------	
+		%	Outter Color Theme 		외부 색 테마 ( 머리말, 고리말, 사이드바 )
+		%	---------------------------------------------------------	
+
+%			\usecolortheme{whale}		% 진하다
+%			\usecolortheme{dolphin}	% 중간
+%			\usecolortheme{seahorse}	% 연하다
+
+		%	---------------------------------------------------------	
+		%	Font Theme 				폰트 테마
+		%	---------------------------------------------------------	
+%			\usfonttheme{default}		
+			\usefonttheme{serif}			
+%			\usefonttheme{structurebold}			
+%			\usefonttheme{structureitalicserif}			
+%			\usefonttheme{structuresmallcapsserif}			
+
+
+
+		%	---------------------------------------------------------	
+		%	Inner Theme 				
+		%	---------------------------------------------------------	
+
+%			\useinnertheme{default}
+			\useinnertheme{circles}		% 원문자			
+%			\useinnertheme{rectangles}		% 사각문자			
+%			\useinnertheme{rounded}			% 깨어짐
+%			\useinnertheme{inmargin}			
+
+
+
+
+		%	---------------------------------------------------------	
+		%	이동 단추 삭제
+		%	---------------------------------------------------------	
+%			\setbeamertemplate{navigation symbols}{}
+
+		%	---------------------------------------------------------	
+		%	문서 정보 표시 꼬리말 적용
+		%	---------------------------------------------------------	
+%			\useoutertheme{infolines}
+
+
+			
+	%	---------------------------------------------------------- 	배경이미지 지정
+%			\pgfdeclareimage[width=\paperwidth,height=\paperheight]{bgimage}{./fig/Chrysanthemum.jpg}
+%			\setbeamertemplate{background canvas}{\pgfuseimage{bgimage}}
+
+		%	---------------------------------------------------------	
+		% 	본문 글꼴색 지정
+		%	---------------------------------------------------------	
+%			\setbeamercolor{normal text}{fg=purple}
+%			\setbeamercolor{normal text}{fg=red!80}	% 숫자는 투명도 표시
+
+
+		%	---------------------------------------------------------	
+		%	itemize 모양 설정
+		%	---------------------------------------------------------	
+%			\setbeamertemplate{items}[ball]
+%			\setbeamertemplate{items}[circle]
+%			\setbeamertemplate{items}[rectangle]
+
+
+
+
+
+
+		\setbeamercovered{dynamic}
+
+
+
+
+
+		% --------------------------------- 	문서 기본 사항 설정
+		\setcounter{secnumdepth}{3} 		% 문단 번호 깊이
+		\setcounter{tocdepth}{3} 			% 문단 번호 깊이
+
+
+
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+	\begin{document}
+	
+
+			\title{ 명화에서 길을 찾다 }
+			\author{ 김대희 }
+			\date{ 2020년 
+					08월 
+					14일 
+					금요일 }
+
+
+% -----------------------------------------------------------------------------
+%		개정 내용
+% -----------------------------------------------------------------------------
+%
+%		2020년 7월 20일 첫제작
+%
+%
+%
+
+
+	%	==========================================================
+	%
+	%	----------------------------------------------------------
+		\begin{frame}[plain]
+		\titlepage
+		\end{frame}
+
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+
+
+	%	========================================================== 개요
+		\part{개요}
+		\frame{\partpage}
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+		
+
+	%	---------------------------------------------------------- 지은이
+	%		Frame
+	%	----------------------------------------------------------
+		\section{지은이}
+		\begin{frame} [t,plain]
+		\frametitle{지은이}
+			\begin{block} {지은이}
+			\setlength{\leftmargini}{5em}			
+			\begin{itemize}
+				\item [지은이] 강소연
+			\end{itemize}
+			\end{block}						
+
+		\end{frame}						
+		
+
+	%	---------------------------------------------------------- 도서
+	%		Frame
+	%	----------------------------------------------------------
+		\section{도서}
+		\begin{frame} [t,plain]
+		\frametitle{도서}
+			\begin{block} {도서}
+			\setlength{\leftmargini}{5em}			
+			\begin{itemize}
+				\item [중앙] 654.22-23
+				\item [수정] 652.22-12
+				\item [구덕] 654.22 10
+				\item [남구] 654.22-강55
+			\end{itemize}
+			\end{block}			
+
+								
+		\end{frame}						
+	
+
+	%	---------------------------------------------------------- 제목 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 제목 }
+		\begin{frame} [t,plain]
+		\frametitle{ 제목 }
+			\begin{block} { 제목 }
+			\setlength{\leftmargini}{5em}			
+			\begin{itemize}
+				\item 매혹적인 우리 불화 속 지혜
+				\item 명화에서 길을 찾다
+			\end{itemize}
+			\end{block}			
+
+								
+		\end{frame}						
+
+	%	========================================================== 내용
+		\part{ 내용 }
+		\frame{\partpage}
+
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+
+
+
+	%	---------------------------------------------------------- 목차
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 목차 }
+		\begin{frame} [t,plain]
+		\frametitle{ 목차 }
+			\begin{block} { 목차 }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 서문
+				\item 그림과 경전 소개
+				\item 1장 희생
+				\item 2장 결심
+				\item 3장 정진
+				\item 4장 평온
+				\item 5장 인내
+				\item 6장 욕망
+				\item 7장 지혜
+				\item 8장 선정
+				\item 9장 방편
+				\item 10장 자비
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 서문
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 서문 }
+		\begin{frame} [t,plain]
+		\frametitle{ 서문 }
+			\begin{block} { 서문 }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 그림과 경전 소개
+	%		Frame
+	%	----------------------------------------------------------
+		\section{ 그림과 경전 소개 }
+		\begin{frame} [t,plain]
+		\frametitle{ 그림과 경전 소개 }
+			\begin{block} { 그림과 경전 소개 }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+		
+
+	%	========================================================== 내용
+		\part{ 내용 }
+		\frame{\partpage}
+		
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+		
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	1장	희생	:	안락국 태자 변상도		}
+	\frame [plain] {\sectionpage}
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\frametitle{ 희생 : 안락국태자 변상도  }
+			\begin{block} { 희생: 안락국 태자 이야기  }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	2장	결심	:	지장사왕도		}
+	\frame [plain] {\sectionpage}
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\frametitle{ 바라문의 딸 이야기 }
+			\begin{block} { 바라문의 딸 이야기 }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\frametitle{제1화  바라문의 딸 지옥으로 가다 }
+			\begin{block} { 제1화 \\ 바라문의 딸 지옥으로 가다 }
+			\setlength{\leftmargini}{2em}			
+			\begin{itemize}
+				\item 
+			\end{itemize}
+			\end{block}						
+								
+		\end{frame}						
+
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\frametitle{ 제2화 지옥 중생 모두 구하리! 큰세원을 세우다 }
+			\begin{block} { 제2화 \\ 지옥 중생 모두 구하리!  큰세원을 세우다 }
+%			\setlength{\leftargini}{2em}			
+%			\begin{itemize}
+%				\item 
+%			\end{itemize}
+			\end{block}						
+								
+		\end{frame}		
+
+	%	---------------------------------------------------------- 
+	%		Frame
+	%	----------------------------------------------------------
+		\begin{frame} [t,plain]
+		\frametitle{ 제3화 인과응보의 원리로 중생을 깨우치다 }
+			\begin{block} { 제3화 \\ 인과응보의 원리로 중생을 깨우치다 }
+%			\setlength{\leftargini}{2em}			
+%			\begin{itemize}
+%				\item 
+%			\end{itemize}
+			\end{block}						
+								
+		\end{frame}		
+				
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	3장	정진	:	수월관음도		}
+	\frame [plain] {\sectionpage}
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	4장	평온	:	관경16관변상도		}
+	\frame [plain] {\sectionpage}
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	5장	인내	:	심우도		}
+	\frame [plain] {\sectionpage}
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	6장	욕망	:	감로도		}
+	\frame [plain] {\sectionpage}
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	7장	지혜	:	석가모니 팔상도		}
+	\frame [plain] {\sectionpage}
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	8장	선정	:	달마도		}
+	\frame [plain] {\sectionpage}
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	9장	방편	:	법화경변상도		}
+	\frame [plain] {\sectionpage}
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+	\section{	10장	자비	:	관세음보살32응도		}
+	\frame [plain] {\sectionpage}
+
+
+
+	%	========================================================== 기도
+		\part{기도}
+		\frame{\partpage}
+
+%		\begin{frame} [plain]{목차}
+%		\tableofcontents%
+%		\end{frame}
+
+
+% -----------------------------------------------------------------------------
+%
+% -----------------------------------------------------------------------------
+		\section{다라니기도}
+		\begin{frame} [t,plain]
+		\frametitle{다라니기도}
+			\begin{block} {다라니기도 }
+			\setlength{\leftmargini}{5em}			
+			\begin{itemize}
+				\item [장소]	 법당
+				\item [일시]	 매주 수요일 저녁 8시
+				\item [금액]	
+			\end{itemize}
+			\end{block}						
+		\end{frame}					
+
+
+
+
+
+
+	%	========================================================== 행사
+		\part{행사}
+		\frame{\partpage}
+		
+		\begin{frame} [plain]{목차}
+		\tableofcontents%
+		\end{frame}
+		
+
+	
+
+	
+
+	%	---------------------------------------------------------- 대중공양
+	%		Frame
+	%	----------------------------------------------------------
+		\section{대중공양}
+		\begin{frame} [t,plain]
+		\frametitle{대중공양}
+			\begin{block} {대중공양 }
+			\setlength{\leftmargini}{5em}			
+			\begin{itemize}
+				\item [장소]	 강원도 상원사
+				\item [일시]	7월 16일 (목) 오전 7시 출발
+				\item [금액]	
+			\end{itemize}
+			\end{block}						
+		\end{frame}					
+
+	%	---------------------------------------------------------- 백중기도 
+	%		Frame
+	%	----------------------------------------------------------
+		\section{백중기도 및 영가천도 49재}
+		\begin{frame} [t,plain]
+		\frametitle{백중기도 및 영가천도 49재 }
+			\begin{block} {백중기도 및 영가천도 49재 }
+
+			\setlength{\leftmargini}{5em}			
+			\begin{itemize}
+				\item [입재]	 강원도 상원사
+				\item [회향]	7월 16일 (목) 오전 7시 출발
+				\item [망축기도]	영가1위 1만원
+				\item [생축기도]	가족당 3만원
+			\end{itemize}
+
+			\end{block}						
+		\end{frame}					
+
+
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+
+
+
+
+
+\end{document}
+
+

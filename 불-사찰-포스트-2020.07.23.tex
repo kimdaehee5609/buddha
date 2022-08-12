@@ -1,0 +1,458 @@
+%	------------------------------------------------------------------------------
+%
+%		작성 : 2020년 7월 23일 첫 작업 
+%
+%
+
+%	\documentclass[25pt, a1paper]{tikzposter}
+%	\documentclass[20pt, a0paper, landscape]{tikzposter}
+%	\documentclass[25pt, a1paper ]{tikzposter}
+
+	\documentclass[	20pt, 
+							a0paper, 
+%							portrait, %
+							landscape,
+							margin=0mm, %
+							innermargin=10mm,  		%
+							blockverticalspace=4mm, %
+							colspace=5mm, 
+							subcolspace=0mm
+							]{tikzposter}
+
+%	\documentclass[25pt, a1paper]{tikzposter}
+%	\documentclass[25pt, a1paper]{tikzposter}
+%	\documentclass[25pt, a1paper]{tikzposter}
+
+% 	12pt  14pt 17pt  20pt  25pt
+%
+%	a0 a1 a2
+%
+%	landscape  portrait
+%
+
+	%% Tikzposter is highly customizable: please see
+	%% https://bitbucket.org/surmann/tikzposter/downloads/styleguide.pdf
+
+	%	========================================================== 	Package
+		\usepackage{kotex}						% 한글 사용
+
+
+%% Available themes: see also
+%% https://bitbucket.org/surmann/tikzposter/downloads/themes.pdf
+%	\usetheme{Default}
+%	\usetheme{Rays}
+%	\usetheme{Basic}
+	\usetheme{Simple}
+%	\usetheme{Envelope}
+%	\usetheme{Wave}
+%	\usetheme{Board}
+%	\usetheme{Autumn}
+%	\usetheme{Desert}
+
+%% Further changes to the title etc is possible
+%	\usetitlestyle{Default}			%
+%	\usetitlestyle{Basic}				%
+%	\usetitlestyle{Empty}				%
+%	\usetitlestyle{Filled}				%
+%	\usetitlestyle{Envelope}			%
+%	\usetitlestyle{Wave}				%
+%	\usetitlestyle{verticalShading}	%
+
+
+%	\usebackgroundstyle{Default}
+%	\usebackgroundstyle{Rays}
+%	\usebackgroundstyle{VerticalGradation}
+%	\usebackgroundstyle{BottomVerticalGradation}
+%	\usebackgroundstyle{Empty}
+
+%	\useblockstyle{Default}
+%	\useblockstyle{Basic}
+%	\useblockstyle{Minimal}		% 이것은 간단함
+%	\useblockstyle{Envelope}		% 
+%	\useblockstyle{Corner}		% 사각형
+%	\useblockstyle{Slide}			%	띠모양  
+	\useblockstyle{TornOut}		% 손그림모양
+
+
+	\usenotestyle{Default}
+%	\usenotestyle{Corner}
+%	\usenotestyle{VerticalShading}
+%	\usenotestyle{Sticky}
+
+%	\usepackage{fontspec}
+%	\setmainfont{FreeSerif}
+%	\setsansfont{FreeSans}
+
+%	------------------------------------------------------------------------------ 제목
+
+	\title{ 볼교 사찰 }
+
+	\author{ 2020년 7월 }
+
+%	\institute{서영엔지니어링}
+%	\titlegraphic{\includegraphics[width=7cm]{IMG_1934}}
+
+	%% Optional title graphic
+	%\titlegraphic{\includegraphics[width=7cm]{IMG_1934}}
+	%% Uncomment to switch off tikzposter footer
+	% \tikzposterlatexaffectionproofoff
+
+\begin{document}
+	\maketitle[
+					width=841mm,
+					linewidth = 2mm,
+					innersep=4mm,
+					titletotopverticalspace=2mm, %
+					titletoblockverticalspace=2mm, %
+					titletextscale =4, 
+				]
+
+		%		a0  841 - 1189
+		%		a1  594 - 841
+		%		a2  420 - 594
+
+	\begin{columns}
+
+	%	====== ====== ====== ====== ====== 
+		\column{0.2}
+
+%	------------------------------------------------------------------------------ 강원도 
+			\block{■  강원도 }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 속초시 신흥사
+					\item 홍천군 수타사
+					\item 영원군 보덕사
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+%	------------------------------------------------------------------------------ 인천광역시
+			\block{■  인천광역시 }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 전등사
+					\item 정수사
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+
+%	------------------------------------------------------------------------------ 경기도
+			\block{■  경기도  }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 가평군 현등사
+					\item 남양주시 흥국사
+					\item 안성시 청룡사
+
+					\item 안성시 칠장사
+					\item 여주시 신륵사
+					\item 파주시 보광사
+
+					\item 화성시 용주사
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+
+%	------------------------------------------------------------------------------ 부산광역시
+			\block{■  부산광역시  }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 장안사
+					\item 범어사
+					\item 
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+
+
+%	------------------------------------------------------------------------------ 울산광역시
+			\block{■  울산광역시  }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 신흥사
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+	%	====== ====== ====== ====== ====== 
+		\column{0.2}
+
+%	------------------------------------------------------------------------------ 경남
+			\block{■  경남 }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 고성군 운흥사
+					\item 고성군 옥천사
+
+					\item 김해시 은하사
+
+					\item 남해군 용문사
+
+					\item 산청군 율곡사 
+
+					\item 양산시 신흥사
+					\item 양산시 통도사
+
+					\item 진주시 청곡사
+					\item 창녕군 관룡사
+					\item 통영시 안정사
+					\item 하동군 쌍계사
+					\item 합천군 해인사
+
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+
+
+%	------------------------------------------------------------------------------ 대구광역시
+			\block{■  대구광역시  }
+			{
+					\setlength{\leftmargini}{3em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 동화사
+					\item 소재사
+					\item 용연사
+					\item 파계사
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+	%	====== ====== ====== ====== ====== 
+		\column{0.2}
+
+%	------------------------------------------------------------------------------ 경북
+			\block{■  경상북도  }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 경산시	환성사 
+
+					\item 경주시		기림사
+					\item 경주시		백률사
+					\item 경주시		분황사
+					\item 경주시		불국사
+					\item 경주시		석굴암
+
+					\item 구미시		대둔사
+					\item 구미시		도리사
+					\item 구미시		수다사
+
+
+					\item 김천시		직지사
+					\item 김천시		청암사
+	
+					\item 군위군		법주사
+
+					\item 문경시		봉암사
+					\item 문경시		대승사
+					\item 문경시		김용사
+
+					\item 봉화군		축서사
+					\item 상주시		남장사
+					\item 안동시		봉정사
+					\item 안동시		봉황사	
+					\item 안동시		서악사
+
+					\item 영주시		부석사
+					\item 영주시		성혈사
+
+					\item 예천군		용문사
+					\item 의성군		고운사
+					\item 영덕군		장육사
+
+					\item 영천군		거동사
+					\item 영천군		은해사
+
+					\item 울진군		불영사
+
+					\item 청도군		대비사
+					\item 청도군		대적사
+					\item 청도군		용천사
+					\item 청도군		운문사
+
+					\item 청송군		대전사
+					\item 칠곡군		송림사
+					\item 포항시		오어사
+
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+
+	%	====== ====== ====== ====== ====== 
+		\column{0.2}
+
+%	------------------------------------------------------------------------------ 전남
+			\block{■  전라남도  }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 강진군		무위사
+					\item 강진군		백련사
+
+					\item 고흥군		금탑사
+ 
+					\item 구례군		천은사
+					\item 구례군		화엄사
+
+					\item 나주시		죽림사
+					\item 나주시		다보사	
+					\item 나주시		불희사
+
+
+					\item 보성군 	대원사
+
+					\item 순천시		동화사
+					\item 순천시		선암사
+					\item 순천시		송광사
+					\item 순천시		정혜사
+
+					\item 여수시		흥국사
+					\item 영광군		불갑사
+					\item 해남군 	대흥사	
+					\item 해남군		미황
+
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+
+
+
+%	------------------------------------------------------------------------------ 전북
+			\block{■  전라북도  }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 고창군		문수사
+					\item 고창군		선운사
+
+					\item 김제시		금산사
+					\item 남원시		선국사
+					\item 남원시		실상사
+					\item 부안군		개암사
+					\item 부안군		내소사
+
+					\item 완주군		송광사
+					\item 완주군		위봉사
+					\item 완주군		화암사
+					\item 완주군		송림사
+
+					\item 진안군 	천황사
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+	%	====== ====== ====== ====== ====== 
+		\column{0.2}
+
+
+%	------------------------------------------------------------------------------ 충남
+			\block{■  충청남도  }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 공주시 	마곡사
+					\item 공주시 	갑사
+					\item 공주시 	신원사
+
+					\item 논산시 	쌍계사
+					\item 부여군		무량사
+					\item 청양군		장곡사
+					\item 홍성군		고산사
+					\item 서산시		개심사
+					\item 서산시		문수사
+					\item 예산군 	수덕사
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+
+
+%	------------------------------------------------------------------------------ 충북
+			\block{■  충청북도  }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 보은군		법주사
+					\item 괴산군		각연사
+					\item 제천군		신륵사
+					\item 청원군		안심사
+					\item 청원군		월리사
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+
+%	------------------------------------------------------------------------------ 서울
+			\block{■  서울 특별시  }
+			{
+					\setlength{\leftmargini}{4em}
+					\setlength{\labelsep} {1em}
+				\begin{LARGE}
+					\begin{itemize}
+					\item 홍천사
+					\item 안양암
+					\end{itemize}
+				\end{LARGE}
+			} %	-----------------------------------------------------------------
+
+
+
+
+
+	\end{columns}
+
+
+
+
+\end{document}
+
+
+		\begin{huge}
+		\end{huge}
+
+		\begin{LARGE}
+		\end{LARGE}
+
+		\begin{Large}
+		\end{Large}
+
+		\begin{large}
+		\end{large}
+
